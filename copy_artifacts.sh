@@ -48,7 +48,7 @@ copy_report() {
     target_dir=$(dirname "$report")
 
     artifact=$report
-    unzip -o "$AET_REPO_PATH/$artifact" -d "$AET_REPO_PATH/report"
+    unzip -o "$AET_REPO_PATH/$artifact" -d "$AET_DOCKER_PATH/report"
     # rm -rf "$AET_REPO_PATH/$target_dir/*"
 }
 

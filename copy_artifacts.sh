@@ -2,13 +2,19 @@
 
 set -o errexit
 
-AET_REPO_PATH=${$1'../aet'}
-AET_DOCKER_PATH=${$2'../aet-docker'}
+AET_REPO_PATH=${1:-'../aet'}
+AET_DOCKER_PATH=${2:-'../aet-docker'}
 
-if [ ! -d AET_REPO_PATH ] && [ ! -d AET_DOCKER_PATH ]; then
-    echo -e "$AET_REPO_PATH or $AET_DOCKER_PATH doesn't exists.\n exiting..."
+if [ ! -d "$AET_REPO_PATH" ] || [ ! -d "$AET_DOCKER_PATH" ]; then
+    echo -e "$AET_REPO_PATH or $AET_DOCKER_PATH doesn't exists.\nexiting..."
     exit 1
 fi
+
+echo 'Checking directory structure...'
+for directory in 'configs' 'bundles' 'features' 'report'; do
+    echo "Checking if $AET_DOCKER_PATH/$directory exist..."
+    [ -d "$AET_DOCKER_PATH/$directory" ] || mkdir -p "$AET_DOCKER_PATH/$directory"
+done
 
 AET_VERSION=$(grep -E ".*<version>.*" "$AET_REPO_PATH/pom.xml" | head -n 1 | tr -dc '0-9|.|[A-Z]|-')
 

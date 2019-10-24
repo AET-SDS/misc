@@ -2,8 +2,8 @@
 
 set -o errexit
 
-AET_REPO_PATH=${$1'/home/aet/aet'}
-AET_DOCKER_PATH=${$2'/home/aet/aet-docker'}
+AET_REPO_PATH=${$1'../aet'}
+AET_DOCKER_PATH=${$2'../aet-docker'}
 
 if [ ! -d AET_REPO_PATH ] && [ ! -d AET_DOCKER_PATH ]; then
     echo -e "$AET_REPO_PATH or $AET_DOCKER_PATH doesn't exists.\n exiting..."

@@ -22,6 +22,7 @@ bundles=(
     "api/communication-api/target/com.cognifide.aet.communication-api-$AET_VERSION.jar"
     "api/datastorage-api/target/com.cognifide.aet.datastorage-api-$AET_VERSION.jar"
     "api/jobs-api/target/com.cognifide.aet.jobs-api-$AET_VERSION.jar"
+    "api/models-api/target/com.cognifide.aet.models-api-$AET_VERSION.jar"
     "api/validation-api/target/com.cognifide.aet.validation-api-$AET_VERSION.jar"
     "core/cleaner/target/com.cognifide.aet.cleaner-$AET_VERSION.jar"
     "core/communication/target/com.cognifide.aet.communication-$AET_VERSION.jar"
